@@ -26,7 +26,7 @@ module cutouts() {
     translate([96.5, 272.45, 0]) screw();
     
     //cut away.
-    translate([0, total_width, 0]) cylinder(h=plate_thickness, r1 = 52.15, r2=52.15, $fn=360);
+    translate([5, total_width + 8, 0]) cylinder(h=plate_thickness, r1 = 60.69, r2=60.69, $fn=360);
     
 }
 
@@ -129,3 +129,6 @@ module final() {
 //color("red") border();
 //color("blue") plate(plate_thickness, total_length, total_width);
 final();
+
+
+
