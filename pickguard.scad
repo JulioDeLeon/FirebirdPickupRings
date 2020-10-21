@@ -2,6 +2,12 @@ plate_thickness = 2.06;
 total_length = 113.0;
 total_width = 278.0;
 
+module curve(width, height, length, dh) {
+    r = (pow(length/2, 2) + pow(dh, 2))/(2*dh);
+    a = 2*asin((length/2)/r);
+    translate([-(r -dh), 0, -width/2]) rotate([0, 0, -a/2])         rotate_extrude(angle = a) translate([r, 0, 0]) square(size = [height, width], center = true);
+}
+
 module screw() {
         screw_top = 4.00 / 2;
         screw_bottom = 3.00 /2;
@@ -17,12 +23,12 @@ module switch_cutout() {
 }
 
 module cutouts() {
-    translate([5.8, 14.0, 0]) screw();
-    translate([53, 87.75, 0]) screw();
+    translate([5.4, 14.0, 0]) screw();
+    translate([52, 87.75, 0]) screw();
     translate([5.4, 116, 0]) screw();
-    translate([84, 173.25, 0]) screw();
+    translate([83, 171.25, 0]) screw();
     translate([5.4, 219.45, 0]) screw();
-    translate([85, 245.95, 0]) switch_cutout();
+    translate([85, 242.95, 0]) switch_cutout();
     translate([96.5, 272.45, 0]) screw();
     
     //cut away.
