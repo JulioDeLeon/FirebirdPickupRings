@@ -1,7 +1,7 @@
 $fn= 360;
 total_width = 117.25;
 total_length = 53.48;
-thickness = 2.3;
+thickness = 2.06;
 
 module curve(width, height, length, dh) {
     r = (pow(length/2, 2) + pow(dh, 2))/(2*dh);
