@@ -35,7 +35,7 @@ module cutouts() {
     translate([83, 171.25, 0]) screw();
     translate([5.4, 219.45, 0]) screw();
     translate([85, 242.95, 0]) switch_cutout();
-    translate([96.5, 272.45, 0]) screw();
+    translate([95.25, 272, 0]) screw();
     
 
     
