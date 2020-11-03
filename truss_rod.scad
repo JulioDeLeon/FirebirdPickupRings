@@ -53,7 +53,7 @@ module bottom_catch() {
 module bottom_left_curve() {
     color("blue") 
     translate([8,15.5,0])
-    rotate([0,0,17])
+    rotate([0,0,19])
     c_curve(thickness , 2,  59.50, 4.75);
 }
 
@@ -180,6 +180,7 @@ module unclean_final() {
 
 module clean_final() {
     difference() {
+        translate([0,0,0])
         unclean_final();
         border();
     }

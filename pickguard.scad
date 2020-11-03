@@ -29,13 +29,14 @@ module switch_cutout() {
 }
 
 module cutouts() {
-    translate([5.4, 14.0, 0]) screw();
-    translate([52, 87.75, 0]) screw();
-    translate([5.4, 117, 0]) screw();
-    translate([83, 171.25, 0]) screw();
-    translate([5.4, 219.45, 0]) screw();
-    translate([85, 242.95, 0]) switch_cutout();
-    translate([95.25, 272, 0]) screw();
+    y_offset = 1.5;
+    translate([5.4, 14.0 - y_offset, 0]) screw();
+    translate([52, 87.75 - y_offset, 0]) screw();
+    translate([5.4, 117 - y_offset, 0]) screw();
+    translate([83, 171.25 - y_offset, 0]) screw();
+    translate([5.4, 219.45 - y_offset, 0]) screw();
+    translate([85, 242.95 - y_offset, 0]) switch_cutout();
+    translate([95.25, 272 - y_offset, 0]) screw();
     
 
     
@@ -65,14 +66,14 @@ module plate(thickness, length, width) {
         c_curve(plate_thickness, 2, 30, 6);
     
         color("green")
-        translate([65.5, 255, 0])
-        rotate(-25)
-        c_curve(plate_thickness, 2, 25, 1);
+        translate([61, 256, 0])
+        rotate(-40)
+        c_curve(plate_thickness, 4, 50, 1.6);
     
         color("green")
         translate([32, 240, 0])
-        rotate(-69)
-        c_curve(plate_thickness, 3, 70, 12);
+        rotate(-60)
+        c_curve(plate_thickness, 3, 71.4, 8);
     
         color("purple")
         translate([101.5, 215, 0])
@@ -89,14 +90,41 @@ module plate(thickness, length, width) {
         rotate(-35)
         c_curve(plate_thickness, 2, 33, 2);
         
+        
+       
+        hull() {
         color("magenta")
-        translate([1,226,0])
+        translate([31,222,0])
         basic();
         
-    
         color("magenta")
-        translate([32,226,0])
+        translate([24,228,0])
         basic();
+        
+        color("magenta")
+        translate([60,245,0])
+        basic();
+            
+         color("magenta")
+        translate([60,240,0])
+        basic();
+        }
+    
+
+        color("pink")    
+        hull() {
+                    color("blue")
+        translate([54, 242,0])
+        basic();
+        color("blue")
+        translate([70, 262,0])
+        basic();
+        color("blue")
+        translate([65, 250,0])
+        basic();
+        }
+        
+        
         hull() {
             color("magenta")
             translate([50,226,0])
